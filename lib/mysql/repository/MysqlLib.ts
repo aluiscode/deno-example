@@ -33,6 +33,24 @@ class MysqlLib {
     }
   }
 
+  async update(query: any, data: any) {
+    console.log(data)
+    try {
+      const result = await this.model.where(...query).update(data);
+      return result;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async delete(dataId: any) {
+    try {
+      const deleted = await this.model.deleteById(dataId);
+      return deleted;
+    } catch (error) {
+      return error;
+    }
+  }
 }
 
 export default MysqlLib;

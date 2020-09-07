@@ -40,6 +40,26 @@ function sponsorApi(app: Application){
     }
   })
 
+  router.put('/:sponsorId', async({request, response, params})=>{
+    const id = params.sponsorId;
+    const body = await request.body().value;
+    try {
+      const result = await sponsorService.updateSponsor(id, body);
+      response.body = result;
+    } catch (error) {
+      console.log(error);
+    }
+  })
+
+  router.delete('/:sponsorId', async ({response, params}) => {
+    const { sponsorId } = params;
+    try {
+      const result = await sponsorService.deleteSponsor(sponsorId);
+      response.body = result;
+    } catch (error) {
+      console.log(error);
+    }
+  });
 }
 
 export { sponsorApi };

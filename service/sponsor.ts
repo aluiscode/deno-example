@@ -23,6 +23,15 @@ class SponsorService {
     return result;
   }
 
+  async updateSponsor(sponsorId: any, sponsor: any) {
+    const updatedSponsor = await this.mysqlLib.update(['id', sponsorId], sponsor);
+    return updatedSponsor || [];
+  }
+
+  async deleteSponsor(sponsorId: any) {
+    const deletedSponsor = await this.mysqlLib.delete(sponsorId);
+    return deletedSponsor || [];
+  }
 }
 
 export default SponsorService;
