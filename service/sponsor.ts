@@ -6,7 +6,11 @@ class SponsorService {
 
   constructor() {
     this.mysqlLib = new MysqlLib(Sponsor);
-    console.log(this.mysqlLib)
+  }
+
+  async getSponsor(sponsorId: any) {
+    const sponsor = await this.mysqlLib.get(sponsorId);
+    return sponsor || [];
   }
 
   async getSponsors() {

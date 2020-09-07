@@ -11,15 +11,15 @@ function sponsorApi(app: Application){
 
   const sponsorService = new SponsorService();
 
-  // router.get('/:sponsorId', async ({response, params}) => {
-  //   const { sponsorId } = params;
-  //   try {
-  //     const result = await sponsorService.get(sponsorId);
-  //     response.body = result;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // });
+  router.get('/:sponsorId', async ({response, params}) => {
+    const { sponsorId } = params;
+    try {
+      const result = await sponsorService.getSponsor(sponsorId);
+      response.body = result;
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   router.get('/', async ({ response }) => {
     try {
