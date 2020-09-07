@@ -18,6 +18,11 @@ class SponsorService {
     return sponsors || [];
   }
 
+  async createSponsor(sponsor: any) {
+    const result = await this.mysqlLib.create(sponsor);
+    return result;
+  }
+
 }
 
 export default SponsorService;

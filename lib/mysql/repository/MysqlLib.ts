@@ -23,6 +23,16 @@ class MysqlLib {
     }
   }
 
+  async create(data: any) {
+    try {
+      const created = await this.model.create(data);
+      return created;
+    } catch (error) {
+      console.log(error)
+      return error;
+    }
+  }
+
 }
 
 export default MysqlLib;
