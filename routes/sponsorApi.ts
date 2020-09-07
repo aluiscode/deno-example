@@ -24,7 +24,6 @@ function sponsorApi(app: Application){
   router.get('/', async ({ response }) => {
     try {
       const result = await sponsorService.getSponsors();
-      console.log('Ruta')
       response.body = result;
     } catch (error) {
       console.log(error);
