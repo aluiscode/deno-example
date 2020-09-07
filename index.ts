@@ -1,4 +1,4 @@
-import { Application, Router } from 'https://deno.land/x/oak@v6.1.0/mod.ts';
+import { Application } from 'https://deno.land/x/oak@v6.1.0/mod.ts';
 import { sponsorApi } from './routes/sponsorApi.ts';
 import { config } from './config/index.ts';
 
